@@ -1,0 +1,38 @@
+O COMANDO CONTINUE
+- utilizado quando é necessário alterar o fluxo
+- este comando permite alterar o fluxo do laço
+- retorna a repetição para o início
+- utilizado em muitos casos para evitar if's aninhados
+- sintaxe
+  while (condição) {
+    <comando 1>;
+    ...
+    continue;
+    ...
+    <comando n>;
+  }
+
+  ou
+
+  do {
+    <comando 1>;
+    ...
+    continue;
+    ...
+    <comando n>;
+  } while (condição);
+
+  ou
+
+  for (<inicialização>; <condição de parada>; <incremento>) {
+    <comando 1>;
+    ...
+    continue;
+    ...
+    <comando n>;
+  }
+
+O COMANDO BREAK
+- utilizado para encerrar a repetição imediatamente
+- útil para evitar uma quantidade excessiva de if aninhados.
+- a sintaxe é a mesma do continue

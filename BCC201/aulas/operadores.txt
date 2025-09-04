@@ -1,0 +1,26 @@
+OPERADORES DE IGUALDADE E RELACIONAIS
+Relacionais
+- maior que: >
+- menor que: <
+- maior ou igual: >=
+- menor ou igual: <=
+
+Igualdade
+- igual a: ==
+- diferente de: !=
+
+OPERADORES LÓGICOS
+- expressões lógicas (ou booleanas) possuem o valor "true" ou "false"
+- em C, os inteiros também podem ser utilizados como valores booleanos
+	. 1 == true / 0 == false
+- exemplos:
+	. negação: !
+	. and: &&
+	. or: ||
+
+
+COMANDO DE DECISÃO
+- permite ao programa realizar uma ação alternativa, a partir de uma condição true/false
+- comando if/else
+	. if([condição]) { ... }
+	. if([condição]) { ... } else { ... }

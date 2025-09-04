@@ -1,0 +1,25 @@
+COMANDO DE DECISÃO - SWITCH
+- verifica várias possibilidades de decisão
+- sintaxe:
+  switch(op) {
+    case valor1:
+    <comandos>
+    break;
+
+    case valor2:
+    <comandos>
+    break;
+
+    default:
+    <comandos>
+  }
+
+- funcionamento
+  . verifica se op é igual a valor1, se sim, executa o bloco de comandos logo abaixo
+  . se não, passa para o próximo caso, e assim por diante
+  . se op não for igual a nenhum dos casos, é executado o bloco de comandos default
+
+- observações
+  . switch só permite comparar expressões com constantes
+  . se o comando break não for utilizado em cada case o programa continuará em execução até o fim do bloco
+  

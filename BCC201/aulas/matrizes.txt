@@ -1,0 +1,17 @@
+DEFINIÇÃO
+- a matriz pode ser definida como uma tabela
+
+- sintaxe: <tipo> <identificador> [<linhas>] [<colunas>];
+  ex: int matriz[10][10]; // declaração de matriz 10x10
+
+- acesso de elementos na matriz
+  <variável>[<indice_linha>][<indice_coluna>]
+  ex: matriz[10][5] = 10; // a matriz na linha 10 coluna 5 recebe o valor 10
+
+PASSANDO MATRIZ PARA FUNÇÕES
+- ao passar uma matriz para uma função é passado as dimensões da matriz
+- é interessante passar o numero de linhas e colunas utilizadas
+- ex: void imprimirMatriz(int matriz[5][5], int n, int m) //sendo n e m os valores de linha e coluna
+- ao chamar a função do exemplo na main, ficaria:
+  imprimirMatriz(A, 3, 3);
+  considerando o identificador da matriz como A e que foram utilizadas 3 linhas e 3 counas

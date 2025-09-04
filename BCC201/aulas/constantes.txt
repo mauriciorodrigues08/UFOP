@@ -1,0 +1,74 @@
+CONSTANTES
+- palavra chave para declaração de constante: const
+- assegura que a variável não será alterada durante todo o código
+- indicado para declarar valores constantes
+- as variáveis associadas ao qualificador const devem ser inicializadas(adicionado valor)
+
+PRE-PROCESSADOR E DIRETIVAS
+- o pré-processador é um programa que examina o código fonte antes mesmo de ser compilado
+- as diretivas do pré-processador são recursos utilizados para tornar os programas mais claros e fáceis de manter
+- são também sinais para o pré-processador que algo deve ser alterado no código fonte antes da compilação
+- exemplos de diretiva:
+	. #include: 
+		inclui outro arquivo ao código fonte
+	. #define: 
+		define constantes simbólicas com nomes mais apropriados
+		quando um define é utilizado todas as suas ocorrências no código serão substituídas pelo valor atribuído
+		ex: #define PI 3.1415
+
+BIBLIOTECA <math.h>
+- é uma biblioteca que oferece algumas funções matemáticas que a linguagem C não possui diretamente
+- exemplos de utilização:
+	. funções de arredondamento de valor
+		double ceil(double x) - arredonda x para cima - ceil(9.1) => 10.0
+		double floor(double x) - arredonda x para baixo - floor(9.8) => 9.0
+		double round(double x) - arredonda x para o valor mais próximo - round(9.5) => 10.0 / round(9.4) => 9.0
+		double trunc(double x) - retorna a parte inteira de x - trunc(9.65) => 9.0
+
+	. funções para potência
+		double exp(double x) - exponencial de x: e^x - exp(5) => 148.8
+		double pow(double x, double y) - x elevado a y: x^y - pow(3,2) => 9.0
+		double sqrt(double x) - raiz quadrada de x: x^1.0/2 - sqrt(25) => 5.0
+		double cbrt(double x) - raiz cúbica de x: x^1.0/3 - cbrt(27) => 3.0
+	
+	. funções trigonométricas
+		cosseno: double cos(double x)
+		seno: double sin(double x)
+		tangente: double tan(double x)
+
+	. funções  logarítmicas
+		log natural (base e): double log(double x)
+		log na base 2: double log2(double x)
+		log na base 10: double log10(double x)
+
+CONVERSÃO DE TIPOS
+x = (int)pow(1, 3) //converte o resultado do pow() em inteito
+
+double a = pow(y, (double)1/3) //converte o valor 1 para double
+
+
+BIBLIOTECA <stdlib.h>
+- fornece várias funções úteis para manipulação de memória
+- ex: geração de números aleatórios, execução de comandos no sistema, etc
+- algumas funções da biblioteca
+	. void abort() - fecha o programa retornando erro - abort()
+	. int abs(int x) - valor absoluto de um inteiro - abs(-10) → 10
+	. void exit(int x) - fecha o programa retornando x - exit(0)
+	. int system(char[] cmd) - executa o comando cmd - system("clear")
+
+GERAÇÃO DE NÚMEROS ALEATÓRIOS
+- a geração de números pseudo-aleatórios utiliza um valor como semente e um algoritmo para gerar números "aleatórios"
+	. se conhecermos a semente, podemos prever quais números serão gerados pelo algoritmo
+- para gerar números realmente aleatórios podemos utilizar dados externos ou uma semente baseada em dados externos
+- função time()
+	. retorna a data/hora atual
+	. para utilizar time() é necessário incluir a biblioteca <time.h>
+- função srand()
+	. altera a semente de números aleatórios
+	. ex: srand(); // utilizando o número 1 como semente
+
+- função rand()
+	. gera um número aleatório entre 0 e RAND_MAX
+	. ex: 
+		srand(time(NULL)); //utilizando a função time() como semente
+		int sorteio = rand() % 100; //gera um número entre 0 e 99

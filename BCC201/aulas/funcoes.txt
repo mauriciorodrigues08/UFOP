@@ -1,0 +1,27 @@
+FUNÇÕES
+- sintaxe 
+  . protótipo
+    <tipo de retorno> <identificador> (<declaração de parâmetros>);
+    ex: int soma(int num1, int num2);
+
+  . implementação
+    <tipo de retorno> <identificador> (<declaração de parâmetros>) {
+      <corpo da função>
+    }
+  
+ESCOPO DE VARIÁVEIS
+- variáveis são acessíveis somente no bloco em que foram criadas
+- ex: se a variável foi criada no bloco main() ela não será acessível em uma outra função
+- mesmo que duas variáveis possuam o mesmo nome, serão diferentes se criadas em blocos diferentes
+- é possível declarar variáveis globais, porém seu uso é considerado uma má prática de programação
+
+RETORNO DA FUNÇÃO
+- é o valor que a função irá retornar ao ser executada
+- esse valor não é obrigatório, algumas funções não retornam nenhum valor, como funções do tipo void
+
+PASSAGEM DE PARÂMETROS
+- os parâmetros formais (variáveis locais, declaradas como parâmetro da função chamada) são inicializadas com o valor das variáveis
+- passagem por valor
+  . passa para a função o valor da variável declarada como parâmetro
+  . o valor dos parâmetros, se alterados dentro da função não alterarão o valor da variável original
+

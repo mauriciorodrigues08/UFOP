@@ -1,0 +1,31 @@
+O COMANDO DO-WHILE
+- funciona de forma semelhante ao while.
+- expressão de lógica que controla o laço no final.
+- sintaxe:
+  do {
+    <comandos>
+  } while ()
+
+- no comando do–while, ao contrário do comando while, o teste do laço/loop está no final, isso significa que os <comandos> serão executados no mínimo uma vez.
+
+VALIDAÇÃO DE ENTRADA
+- a repetição será executada até o valor digitado ser válido
+- ex: usuário deve digitar um valor inteiro, positivo e par.
+  do {
+    printf("Digite um valor: ");
+    scanf("%d", &x);
+
+    if (x <= 0 || x % 2 != 0)
+      printf("ERRO! Valor inválido!")
+  } while (x <= 0 || x % 2 != 0)
+
+REPETIÇÃO DO PROGRAMA
+- o comando do–while é útil para implementar repetição do programa
+- ex:
+  char op
+  do {
+    <codigo do programa>
+
+    printf("Quer repetir o programa(s/n)? ");
+    scanf("%c", &op);
+  } while(op == toupper(op))

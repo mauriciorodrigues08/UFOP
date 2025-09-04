@@ -1,0 +1,35 @@
+LAÇOS E REPETIÇÕES
+- Definição
+  . laços são comandos utilizados sempre que uma ou mais instruções devam ser repetidas enquanto um certa condição estiver sendo satisfeita
+  . Exemplos em C/C++: while / do - while / for
+
+- Tipos de laços
+  . em um laço controlado logicamente, os comandos são repetidos enquanto uma expressão for verdadeira.
+    ex.: while e do - while
+    utilizado quando não se sabe a quantidade de vezes que será repetido
+
+  . em um laço controlado por contador, os comandos são repetidos por um número determinado de vezes.
+    ex.: for
+    utilizado quando a quantidades de vezes a ser repedito é pré-determinado
+
+  . denomina-se iteração a repetição de um conjunto de comandos
+
+COMANDO WHILE
+- Definição
+  . Este ciclo de teste e execução é repetido enquanto a expressão do teste for verdadeira. Quando a expressão se tornar falsa, o laço termina e a execução continua na linha seguinte ao laço.
+
+- Sintaxe
+  while () {
+    comando 1;
+    comando 2;
+    ...
+    i++
+  }
+
+- Obs:
+  . não esquecer de inicializar o contador i antes do início do laço
+  . não esquecer de incrementar o contador i após o final dos comandos
+  
+
+
+  

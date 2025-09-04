@@ -1,0 +1,59 @@
+AULA 01 - Conceitos Iniciais - 08/05
+
+ORGANIZAÇÃO DE COMPUTADORES
+Computadores são divididos em unidades lógicas:
+  - entrada
+    . seção receptora do computador
+    . obtém informações de dispositivos de entrada e as envia para as unidades de processamento
+    . ex: teclado
+
+  - saída
+    . seção de envio do computador
+    . ex: tela, impressora
+
+  - armazenamento principal
+    . seção de armazenamento de relativamente baixa capacidade
+    . acesso rápido
+    . memória ram, memória cash, memória rom (bios)
+    . funciona apenas enquanto o computador está ligado
+
+  - armazenamento secundário
+    . seção de armazenamento de alta capacidade e longo prazo do computador
+    . acesso lento
+    . hd, cd, dvd, cartão de memória
+    . as informações são preservadas mesmo após desligar o computador
+
+  - unidade de aritmética e lógica (alu)
+    . seção de produção do computador
+    . responsável pela realização de cálculos matemáticos e lógicos
+    . contém mecanismos de decisão que permitem, por ex, comparar valores
+
+  - unidade central de processamento (cpu)
+    . seção administrativa do computador
+    . coordena e supervisiona a operação das outras seções
+    . a cpu diz à unidade de entrada quando as informações da unidade de memória devem ser utilizadas em cálculos
+    . instrui a unidade de saída sobre quando enviar as informações.
+    . atualmente os computadores possuem mais de uma unidade cpu (multicore)
+
+
+PROGRAMAÇÃO E HIERARQUIA DE DADOS
+Programa
+  - software, instruções dadas ao computador
+
+Programação estruturada
+  - programação ordenada, comandos sequenciados
+
+Bit
+  - menor item de dado em um computador
+  - valor binário
+
+Byte
+  - conjunto de 8 bits
+
+Linguagens de Programação
+  - as LPs são divididas em 3 tipos
+    . linguagens de máquina: códigos de 0 e 1
+    . linguagens assembly: códigos que equivalem à linguagens de máquina
+    . linguagens de alto nível: utilizado pelos programadores, LPs atuais
+
+  - C e C++ são duas das linguagens mais populares no desenvolvimento de software
