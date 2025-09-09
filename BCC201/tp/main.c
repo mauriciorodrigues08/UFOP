@@ -1,5 +1,4 @@
 // Maurício de Oliveira Santos Rodrigues
-// 25.1.4020
 
 #include <stdlib.h>
 #include <time.h>
