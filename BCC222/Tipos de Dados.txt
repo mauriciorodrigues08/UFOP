@@ -1,0 +1,95 @@
+SINTAXE
+- A regra de nomenclatura mais importante em Haskell distingue a natureza de um nome pela sua primeira letra
+
+- Começam com maiúscula:
+  . Nomes de Tipos
+  . Nomes de Construtores
+  . Ex: String, Int, Bool, True, Just
+
+- Começam com minúscula:
+  . Nomes de Funções
+  . Nomes de Variáveis
+  . Ex: minhaString, idade, sqrt, areaCirculo
+
+
+TIPOS BÁSICOS
+- Int: Inteiros de precisão fixa (rápidos, mas limitados). Ex: 10.
+- Integer: Inteiros de precisão arbitrária (ilimitados). Ex: 123^^...90.
+- Float: Ponto flutuante de precisão simples. Ex: 1.4568
+- Double: Ponto flutuante de precisão dupla (padrão). Ex: 3.14159.
+- Bool: Valores lógicos. Contém apenas True e False.
+- Char: Um único caractere Unicode. Ex: 'a', '\n'.
+- String: Uma sequência de caracteres. É açúcar sintático para [Char]. Ex: ”Haskell”.
+
+TIPOS EM FUNÇÕES
+- O tipo de uma função, ou assinatura de tipo, descreve os tipos dos seus argumentos e do seu resultado.
+
+- Sintaxe:
+  . nome_funcao :: tipo_arg1 -> tipo_arg2 -> ... -> tipo_resultado
+
+  . Ex: not :: Bool -> Bool 
+      a função not recebe um bool e retorna um bool
+  
+  . Ex2: -- max :: Int -> Int -> Int
+      a função `max` recebe dois Ints e retorna um Int
+
+  . O que vem depois da última seta representa o tipo que será retornado pela função
+
+
+CHECAGEM DE TIPOS
+- Haskell possui um sistema de tipagem estática. A verificação de tipos ocorre em tempo de compilação, antes da execução.
+
+- O compilador age como um revisor, garantindo que você não aplique operações a tipos incompatíveis.
+
+- Vantagem: Uma classe inteira de erros é eliminada antes que o programa seja executado. Se compila, provavelmente funciona.
+
+
+INFERÊNCIA DE TIPOS
+- É a habilidade do compilador de deduzir (inferir) os tipos das suas funções e variáveis automaticamente, sem que você precise anotá-los
+
+- Considere a função: dobro x = x + x
+  . A função (+) espera dois argumentos do mesmo tipo numérico.
+  . Como x é usado em ambos os lados, x deve ser de um tipo numérico.
+  . O resultado também será desse mesmo tipo numérico.
+  . Conclusão: O compilador infere o tipo Num a => a -> a (a representa um tipo numérico qualquer)
+
+
+ASSINATURA DE TIPOS
+- Embora a inferência seja poderosa, declarar explicitamente o tipo de suas funções de topo (top-level) é considerado uma prática essencial em Haskell.
+
+- Declarar o tipo de uma função ajuda a verificar se seu programa está sendi implementado corretamente.
+
+- Com uma assinatura explícita, as mensagens de erro do compilador se tornam muito mais claras e fáceis de entender.
+
+- A prática comum é escrever a assinatura de tipo em uma linha e a definição da função logo abaixo.
+  . Ex: função para calcular a área de um círculo
+	-- Assinatura de tipo 
+	areaCirculo ^:: Double -> Double
+
+	-- Definição (equação)
+	areaCirculo raio = pi * raio^2
+
+
+TIPOS SINÔNIMOS
+- É um novo nome (um apelido) para um tipo já existente. Eles são criados com a palavra-chave type e não criam um tipo novo, apenas melhoram a legibilidade.
+
+- Podemos criar os nossos próprios para dar mais semântica ao código:
+  . type Nome = String
+  . type Idade = Int
+  . type Coordenada = (Double, Double)
+
+- Tipos sinônimos tornam as assinaturas de tipo muito mais expressivas e fáceis de entender
+  . Para o compilador, as duas versões são idênticas.
+  . Para o programador que lê o código, a segunda versão é imensamente superior.
+
+- Exemplo:
+  . Sem sinônimos
+	-- O que esta função faz?
+	processaPessoa :: String -> Int -> (String, Int)
+
+  . Com sinônimos
+	type Nome = String
+	type Idade = Int
+	
+	-- Agora a intenção é óbvia!
+	processaPessoa :: Nome -> Idade -> (Nome, Idade)
