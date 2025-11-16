@@ -1,0 +1,49 @@
+CONCEITOS
+- Caracteriza uma função que pode ser escrita em função dela própria
+- Por que usar recusividade?
+  . A recursividade é utilizada para dividir um problema de maior dimensão em problemas menores, sucessivamente
+  . Ou seja, a cada chamada recursiva o problema diminui de tamanho
+  . Esse processo é executado até chegar no caso base
+- Ex: função que calcula fatorial chamando ela mesma até multiplicar o próprio valor por 1
+- Formas de recursão
+  . Direta: Função A chama a própria função A
+  . Indireta: Função A chama a função B que chama a função A novamente
+
+CONDIÇÃO DE PARADA
+- Toda função recursiva deve possuir um caso base, ou condição de parada da função
+- Ex: função que imprime os valores de n até 0
+  void func(int n) {
+    printf("%d", n);
+    
+    if (n>0) {
+      printf("* ");
+      func(n-1);
+    }
+  }
+
+  . A condição de parada nesse caso será n == 0
+  . O valor de n é decrementado a cada chamada da função
+
+ESTRUTURA DE UMA FUNÇÃO RECURSIVA
+- Caso base
+  . condição de parada da função
+
+- Processamento complementar
+  . demais processamentos da função que irão auxiliar a manipulação do resultado
+
+- Chamda recursiva
+  . chamada da função por ela mesma
+
+PILHA DE EXECUÇÃO
+- Para cada chamada de função (seja recursiva ou não) os parâmetros e variáveis locais são empilhados
+- Devido a esse empilhamento, ocorrerá a maior utilização de memória ao se utilizar uma função recursiva
+- Portanto, nem sempre a função recursiva será a melhor opção para ser utilizada, já que ela utiliza mais espaço que uma função iterativa
+- Então, quando utilizar funções recursivas?
+  . Apesar de toda função recursiva ter sua variação iterativa, nem sempre a iterativa será facilmente implementada
+  . Então é preciso analisar a complexidade da implementação da função iterativa
+  . Se a função iterativa for facilmente implementada, ela deverá ser utilizada
+  . Caso contrário, o recomendado é a utilização das funções recursivas
+  . Em geral, a recursividade será utilizada na implementação de algoritmos complexos, nos quais a implementação iterativa é muito complexa e normalmente requer o uso explícito de uma Pilha de Execução
+- Exemplos de utilização de recursividade
+  . Método dividir para conquistar (quicksort)
+  . Caminhamento em árvores (backtracking)
