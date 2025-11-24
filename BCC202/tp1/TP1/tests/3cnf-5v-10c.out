@@ -1,0 +1,8 @@
+Formula:
+(a v ~b v c) ∧ (~a v ~d v ~e) ∧ (b v ~c v ~d) ∧ (~b v ~d v e) ∧ (~a v ~c v ~e) ∧ (d v ~c v b) ∧ (~e v a v d) ∧ (~c v ~b v ~a) ∧ (~c v e v b) ∧ (~d v a v ~b)
+Solução encontrada:
+a: True
+b: True
+c: False
+d: False
+e: True

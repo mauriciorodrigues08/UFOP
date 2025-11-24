@@ -1,0 +1,6 @@
+Formula:
+(a v b v c) ∧ (~a v ~b v ~c) ∧ (a v b v ~c) ∧ (~a v ~b v c) ∧ (b v ~a v c)
+Solução encontrada:
+a: True
+b: False
+c: True

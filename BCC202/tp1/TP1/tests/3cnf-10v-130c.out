@@ -1,0 +1,13 @@
+Formula:
+(~a v ~b v ~c) ∧ (~b v ~d v e) ∧ (~a v f v g) ∧ (c v d v ~e) ∧ (~b v g v h) ∧ (a v ~f v i) ∧ (~c v e v j) ∧ (d v ~g v a) ∧ (b v h v ~i) ∧ (~d v f v c) ∧ (e v g v ~b) ∧ (~f v ~h v j) ∧ (c v ~e v g) ∧ (f v ~b v i) ∧ (~c v d v h) ∧ (a v ~g v j) ∧ (b v e v ~f) ∧ (~a v c v i) ∧ (d v ~h v g) ∧ (e v f v ~j) ∧ (c v ~b v h) ∧ (~d v a v g) ∧ (f v ~c v i) ∧ (b v e v ~h) ∧ (a v ~d v j) ∧ (c v g v ~f) ∧ (~b v h v i) ∧ (d v ~a v e) ∧ (f v ~g v b) ∧ (~c v i v j) ∧ (a v b v ~h) ∧ (e v ~f v c) ∧ (~a v g v i) ∧ (d v ~b v j) ∧ (c v e v ~g) ∧ (f v ~d v h) ∧ (b v ~c v i) ∧ (~a v e v g) ∧ (d v ~f v j) ∧ (c v b v ~h) ∧ (e v ~g v a) ∧ (~b v f v i) ∧ (d v ~c v j) ∧ (a v g v ~e) ∧ (c v ~f v h) ∧ (b v d v ~i) ∧ (~a v e v f) ∧ (g v ~b v j) ∧ (c v ~d v i) ∧ (a v f v ~h) ∧ (b v e v ~g) ∧ (~c v d v j) ∧ (f v ~a v i) ∧ (b v ~e v h) ∧ (c v g v ~j) ∧ (a v ~b v f) ∧ (d v e v ~i) ∧ (~a v c v h) ∧ (b v ~f v g) ∧ (e v ~d v j) ∧ (c v ~a v i) ∧ (f v b v ~g) ∧ (d v ~e v h) ∧ (a v c v ~j) ∧ (b v ~g v f) ∧ (e v ~c v i) ∧ (~a v d v h) ∧ (c v ~b v g) ∧ (f v ~e v j) ∧ (a v b v ~i) ∧ (d v ~f v g) ∧ (c v ~a v h) ∧ (b v e v ~j) ∧ (~c v d v i) ∧ (f v ~b v g) ∧ (a v ~e v h) ∧ (c v g v ~i) ∧ (b v ~d v j) ∧ (e v ~a v f) ∧ (d v ~c v i) ∧ (a v f v ~g) ∧ (b v ~h v c) ∧ (~d v e v j) ∧ (c v ~b v f) ∧ (a v g v ~i) ∧ (b v ~e v h) ∧ (~c v d v j) ∧ (f v ~a v g) ∧ (b v e v ~i) ∧ (c v ~f v h) ∧ (a v d v ~j) ∧ (e v ~b v g) ∧ (c v ~a v i) ∧ (d v ~e v h) ∧ (f v ~c v j) ∧ (a v b v ~g) ∧ (e v ~f v c) ∧ (~a v d v i) ∧ (c v ~b v h) ∧ (b v g v ~j) ∧ (d v ~c v f) ∧ (a v ~e v h) ∧ (c v f v ~i) ∧ (b v ~d v g) ∧ (e v ~a v j) ∧ (~c v b v h) ∧ (a v ~f v g) ∧ (d v c v ~j) ∧ (b v ~e v i) ∧ (c v ~a v f) ∧ (f v ~b v g) ∧ (a v d v ~i) ∧ (e v ~c v h) ∧ (b v ~g v j) ∧ (c v ~f v a) ∧ (d v e v ~h) ∧ (a v b v ~i) ∧ (e v ~d v g) ∧ (c v ~a v j) ∧ (b v f v ~h) ∧ (~c v d v i) ∧ (a v ~e v g) ∧ (f v ~h v j) ∧ (c v d v ~i) ∧ (b v ~a v h) ∧ (e v ~f v g) ∧ (a v ~c v j) ∧ (d v b v ~h) ∧ (c v e v ~i) ∧ (f v ~a v g)
+Solução encontrada:
+a: True
+b: True
+c: False
+d: True
+e: True
+f: True
+g: True
+h: True
+i: True
+j: True
