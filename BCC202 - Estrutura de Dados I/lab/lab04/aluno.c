@@ -7,6 +7,9 @@
 No* novoNo(int cidade) {
   No *no = malloc(sizeof(No));
 
+  if (!novoNo)
+    return NULL;
+
   no->cidade = cidade;
   no->prox = NULL;
 
@@ -16,6 +19,9 @@ No* novoNo(int cidade) {
 //adiciona um novo caminho (a -> b)
 void adicionaCaminho(MapaCidades *mapa, int a, int b) {
   No *no = novoNo(b);
+
+  if (!novoNo)
+    return NULL;
 
   no->prox = mapa->vetor[a];
   mapa->vetor[a] = no;
@@ -28,6 +34,11 @@ MapaCidades criaMapa(int n, int m) {
   //criando mapa
   mapa.qtd = n;
   mapa.vetor = calloc(n, sizeof(No*));
+
+  if (!mapa.vetor) {
+    mapa.vetor = NULL;
+    return mapa;
+  }
 
   //adicionando caminhos de forma recursiva
   for (int i = 0; i < m; i++) {
@@ -59,41 +70,39 @@ bool existeCaminho(MapaCidades *mapa, int a, int b, bool *visitado) {
   if (a == b)
     return true;
 
-
   /* busca iterativa - pilha */
   
-  //get quantidade
+  //pega a quantidade de cidades
   int n = mapa->qtd;
 
-  //alocacao da pilha
+  //aloca a pilha
   int *pilha = malloc(n * sizeof(int));
-  if (!pilha) {
+  if (!pilha)
     return false;
-  }
-  int topo = 0;
   
-  //inicia a busca a partir de 'a'
-  visitado[a] = true;
+  //inicia a busca a partir de a
+  int topo = 0;
   pilha[topo++] = a;
+  visitado[a] = true;
 
   while (topo > 0) {
-    int u = pilha[--topo]; // desempilha
+    int ultimo = pilha[--topo]; //pega o ultimo valor e desempilha
 
     //verifica se encontrou
-    if (u == b) {
+    if (ultimo == b) {
       free(pilha);
       return true;
     }
 
     //empilha vizinhos não visitados
-    No *pNo = mapa->vetor[u];
+    No *pNo = mapa->vetor[ultimo];
     
     while(pNo != NULL) {
-      int v = pNo->cidade;
+      int i = pNo->cidade;
 
-      if (!visitado[v]) {
-        visitado[v] = true;
-        pilha[topo++] = v;
+      if (!visitado[i]) {
+        visitado[i] = true;
+        pilha[topo++] = i;
       }
 
       pNo = pNo->prox;

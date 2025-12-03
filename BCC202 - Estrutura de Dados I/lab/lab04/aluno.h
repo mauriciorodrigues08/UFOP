@@ -14,7 +14,7 @@ typedef struct {
 } MapaCidades;
 
 No* novoNo(int cidade);
-void adicionaCaminnho(MapaCidades *mapa, int a, int b);
+void adicionaCaminho(MapaCidades *mapa, int a, int b);
 MapaCidades criaMapa(int n, int m);
 bool existeCaminho(MapaCidades *mapa, int a, int b, bool *visitado);
 void liberaMapa(MapaCidades *mapa);
