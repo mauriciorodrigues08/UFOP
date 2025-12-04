@@ -1,6 +1,4 @@
 .vscode/tasks.json
-BCC202/tp1/clausula.o
-BCC202/tp1/exe
+*.exe
 *.o
-BCC202 - Estrutura de Dados I/lab/lab04/exe
 *.zip
