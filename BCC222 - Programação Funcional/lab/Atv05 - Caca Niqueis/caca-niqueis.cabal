@@ -1,0 +1,43 @@
+cabal-version:      3.0
+name:               caca-niqueis
+version:            0.1.0.0
+synopsis:           Simulador de uma máquina caça-níqueis simples.
+description:        Uma atividade prática em Haskell para calcular prêmios de uma
+                    máquina caça-níqueis com base no número de 'bananas' que
+                    aparecem no visor.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Console Application, Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+                    , text
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  CacaNiqueis
+    hs-source-dirs:   src
+
+executable caca-niqueis
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    caca-niqueis
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    caca-niqueis
+                    , hspec
+                    , ieee754
+                    , process
+                    , temporary

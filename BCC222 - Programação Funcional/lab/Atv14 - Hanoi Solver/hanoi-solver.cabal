@@ -1,0 +1,40 @@
+cabal-version:      3.0
+name:               hanoi-solver
+version:            0.1.0.0
+synopsis:           Solucionador para o quebra-cabeça das Torres de Hanói.
+description:        Uma atividade prática em Haskell para implementar a solução
+                    recursiva clássica para o problema das Torres de Hanói.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Console Application, Learning, Algorithm
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Hanoi
+    hs-source-dirs:   src
+
+executable hanoi-solver
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    hanoi-solver
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    hanoi-solver
+                    , hspec
+                    , process
+                    , temporary

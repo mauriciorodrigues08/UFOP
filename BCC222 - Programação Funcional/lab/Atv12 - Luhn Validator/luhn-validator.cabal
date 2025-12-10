@@ -1,0 +1,42 @@
+cabal-version:      3.0
+name:               luhn-validator
+version:            0.1.0.0
+synopsis:           Implementação do Algoritmo de Luhn para validação de cartões.
+description:        Uma atividade prática em Haskell para praticar recursão e
+                    casamento de padrão em listas através da implementação do
+                    Algoritmo de Luhn.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@gmail.com
+category:           Console Application, Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Luhn
+    hs-source-dirs:   src
+
+executable luhn-validator
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    luhn-validator
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    luhn-validator
+                    , hspec
+                    , QuickCheck
+                    , process
+                    , temporary

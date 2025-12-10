@@ -1,0 +1,51 @@
+cabal-version:      3.0
+name:               gorjetas
+version:            0.1.0.0
+synopsis:           Um programa simples em Haskell para calcular gorjetas.
+description:        Um programa interativo em Haskell que calcula gorjetas com base
+                    no valor da conta e na qualidade do serviço (ruim, bom, excelente).
+                    Solicita os dados ao usuário, valida a qualidade do serviço,
+                    e exibe o valor da gorjeta e o total a pagar formatados.
+                    Este projeto é um exercício de programação funcional e E/S em Haskell.
+homepage:           -- Adicione a URL da homepage do projeto aqui, se houver
+bug-reports:        -- Adicione a URL do bug tracker aqui, se houver
+license:            MIT
+license-file:       LICENSE
+author:             Seu Nome
+maintainer:         seu.email@example.com
+-- copyright:
+category:           Console Application
+build-type:         Simple
+extra-source-files: README.md
+                    LICENSE
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+                    , text
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+
+library gorjetas-lib
+    import:           common-deps
+    exposed-modules:  Gorjeta
+    hs-source-dirs:   src
+
+executable gorjetas-exe -- Nome do executável pode ser diferente do pacote/lib
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    gorjetas-lib
+
+test-suite tests
+    import:           common-deps
+    default-language: Haskell2010
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    gorjetas-lib
+                    , hspec            >= 2.7
+                    , QuickCheck       >= 2.14
+                    , ieee754
+                    , process
+                    , temporary

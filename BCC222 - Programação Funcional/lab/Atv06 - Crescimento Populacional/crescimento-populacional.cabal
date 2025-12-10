@@ -1,0 +1,41 @@
+cabal-version:      3.0
+name:               crescimento-populacional
+version:            0.1.0.0
+synopsis:           Simulador de crescimento populacional recursivo.
+description:        Atividade prática para exercitar recursividade em Haskell modelando
+                    o crescimento de uma população de coelhos com taxa de natalidade
+                    e colheita anual.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Console Application, Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Simulador
+    hs-source-dirs:   src
+
+executable simulador
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    crescimento-populacional
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    crescimento-populacional
+                    , hspec
+                    , process
+                    , temporary

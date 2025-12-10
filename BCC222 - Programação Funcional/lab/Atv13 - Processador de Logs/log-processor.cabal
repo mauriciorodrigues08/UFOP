@@ -1,0 +1,39 @@
+cabal-version:      3.0
+name:               log-processor
+version:            0.1.0.0
+synopsis:           Processamento de logs com recursão e padrões.
+description:        Atividade para praticar parsing simples, tuplas e recursão em listas.
+license:            MIT
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@gmail.com
+category:           Education
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  LogProcessor
+    hs-source-dirs:   src
+
+executable log-processor
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    log-processor
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    log-processor
+                    , hspec
+                    , QuickCheck
+                    , process
+                    , temporary

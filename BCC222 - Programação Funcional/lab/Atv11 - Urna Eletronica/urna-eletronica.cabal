@@ -1,0 +1,39 @@
+cabal-version:      3.0
+name:               urna-eletronica
+version:            0.1.0.0
+synopsis:           Simulador de uma Urna Eletrônica para contagem de votos.
+description:        Atividade prática para exercitar ações de E/S recursivas e passagem de estado via parâmetros.
+license:            MIT
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Education
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+                    , text
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Urna
+    hs-source-dirs:   src
+
+executable urna-eletronica
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    urna-eletronica
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    urna-eletronica
+                    , hspec
+                    , process
+                    , temporary
