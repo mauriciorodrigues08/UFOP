@@ -1,0 +1,40 @@
+# .hlint.yaml — Regras para a atividade de programação funcional
+
+# --- ❌ Regras de estilo transformadas em erro ---
+- error:
+    name: Avoid lambda
+    note: "Use aplicação parcial ou seções sempre que possível. Evite λ desnecessário."
+
+- error:
+    name: Eta reduce
+    note: "Use aplicação parcial ou seções. Evite definir argumentos explicitamente quando desnecessário."
+
+- error:
+    name: Redundant lambda
+    note: "Esta expressão lambda pode ser removida ou simplificada."
+
+- error:
+    name: Use section
+    note: "Prefira seções de operador (ex: `(1+)`) quando possível."
+
+- error:
+    name: Use infix
+    note: "Prefira usar um operador na forma infixa quando possível."
+
+- error:
+    name: "Avoid lambda using `infix`"
+    note: "Use seções de operador em vez de λ com concatenação ou operadores."
+
+# --- ✅ Exceções: funções onde EXPRESSÃO LAMBDA é OBRIGATÓRIA ---
+- ignore:
+    name:
+      - Avoid lambda
+      - "Avoid lambda using `infix`"
+      - Eta reduce
+      - Redundant lambda
+      - Use section
+      - Use infix
+    decl:
+      - Exercicios.somaQuadradosParesLambda
+      - Exercicios.stringsMaioresQue5Lambda
+      - Exercicios.adicionaExclamacaoParLambda

@@ -1,0 +1,43 @@
+cabal-version:      3.0
+name:               rle-compressor
+version:            0.1.0.0
+synopsis:           Uma ferramenta interativa de compressão e descompressão RLE.
+description:        Atividade prática em Haskell para implementar as funções
+                    `comprime` e `descomprime` (Run-Length Encoding) e uma
+                    interface de linha de comando baseada em menu.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@gmail.com
+category:           Console Application, Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  RLE
+    hs-source-dirs:   src
+    build-depends:    base
+
+executable rle-compressor
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    rle-compressor
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    rle-compressor
+                    , hspec
+                    , QuickCheck
+                    , process
+                    , temporary
