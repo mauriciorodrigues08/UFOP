@@ -1,0 +1,43 @@
+cabal-version:      3.0
+name:               avaliacao-alunos
+version:            0.1.0.0
+synopsis:           Processador de notas de alunos a partir de arquivos.
+description:        Uma atividade prática em Haskell para ler argumentos de
+                    linha de comando, manipular arquivos e separar a
+                    lógica pura da E/S.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Console Application, Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  ProcessaNotas
+    hs-source-dirs:   src
+
+executable avaliacao-alunos
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    avaliacao-alunos
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    other-modules:    Run
+    build-depends:    
+        , avaliacao-alunos
+        , hspec
+        , directory
+        , process
+        , temporary
