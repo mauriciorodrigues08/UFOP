@@ -5,7 +5,7 @@
 
 int main() {
   int qtd;
-  char search[MAX_PALAVRA];
+  char busca[MAX_PALAVRA];
   Registro *dicionario;
 
   //recebe a quantidade de palavras
@@ -22,13 +22,14 @@ int main() {
   qsort(dicionario, qtd, sizeof(Registro), comparaPalavras);
 
   //recebe palavra para ser buscada
-  scanf("%s", search);
+  scanf("%s", busca);
+  lower(busca);
 
   //busca binaria
-  int index = binarySearch(dicionario, search, 0, qtd);
+  int index = buscaBinaria(dicionario, busca, 0, qtd);
 
   if (index < 0)
-    printf("Palavra não encontrada\n");
+    printf("Palavra nao encontrada!\n");
 
   else
     printf("%s: %s\n", dicionario[index].palavra, dicionario[index].descricao);

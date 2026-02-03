@@ -11,6 +11,8 @@ typedef struct {
 
 void getRegistros(Registro *dicionario, int qtd);
 int comparaPalavras(const void *a, const void *b);
-int binarySearch(Registro *dicionario, char *search, int left, int right);
+int buscaBinaria(Registro *dicionario, char *busca, int esq, int dir);
+
+void lower(char *palavra);
 
 #endif
