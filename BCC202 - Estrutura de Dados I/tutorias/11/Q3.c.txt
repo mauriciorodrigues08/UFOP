@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+typedef struct {
+  int valor;
+}Chave;
+
+typedef struct {
+      Chave chave ;
+} Item ;
+
+typedef struct no {
+      Item item ;
+      struct no * pEsq ;
+      struct no * pDir ;
+} No ;
+
+typedef No *Arvore;
+
+No *criaNo(Item item);
+
+No* pesquisaNo(Arvore raiz, Chave valorChave) {
+    if (raiz == NULL || raiz->item.chave.valor == valorChave.valor) {
+        return raiz;
+    }
+    if (valorChave.valor < raiz->item.chave.valor) {
+        return pesquisa(raiz->pEsq, valorChave);
+    }
+    else {
+        return pesquisa(raiz->pDir, valorChave);
+    }
+}
+
+void insereNo(Arvore *pRaiz, Item item) {
+    if (*pRaiz == NULL) {
+        *pRaiz = criaNo(item);
+        return;
+    }
+    
+    if (item.chave.valor < (*pRaiz)->item.chave.valor) {
+        insere(&((*pRaiz)->pEsq), item);
+    }
+    else if (item.chave.valor > (*pRaiz)->item.chave.valor) {
+        insere(&((*pRaiz)->pDir), item);
+    }
+}
