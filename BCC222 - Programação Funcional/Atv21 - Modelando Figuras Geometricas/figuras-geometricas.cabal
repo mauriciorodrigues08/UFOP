@@ -1,0 +1,39 @@
+cabal-version:      3.0
+name:               figuras-geometricas
+version:            0.1.0.0
+synopsis:           Exercício prático com Tipos Algébricos de Dados em Haskell.
+description:        Uma atividade para praticar a extensão de um tipo de dado
+                    algébrico (Figura) e a implementação de funções com
+                    casamento de padrão (area, perimetro, ehRegular).
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Figuras
+    hs-source-dirs:   src
+
+executable figuras-geometricas
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    figuras-geometricas
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    build-depends:    
+        , figuras-geometricas
+        , hspec

@@ -1,0 +1,39 @@
+cabal-version:      3.0
+name:               processamento-seguro-dados
+version:            0.1.0.0
+synopsis:           Implementação de Functor, Applicative e Monad para um tipo Result.
+description:        Uma atividade prática para o Capítulo 21, focada em implementar
+                    as classes Functor, Applicative e Monad para um tipo de dado
+                    algébrico que lida com computações que podem falhar.
+license:            MIT
+license-file:       LICENSE
+author:             Prof. José Romildo Malaquias
+maintainer:         malaquias@ufop.edu.br
+category:           Learning
+build-type:         Simple
+extra-source-files: README.md
+
+common common-deps
+    build-depends:    base >= 4.7 && < 5
+    default-language: Haskell2010
+    ghc-options:      -Wall -Wcompat
+
+library
+    import:           common-deps
+    exposed-modules:  Result
+    hs-source-dirs:   src
+
+executable processamento-seguro-dados
+    import:           common-deps
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    processamento-seguro-dados
+
+test-suite tests
+    import:           common-deps
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          MainSpec.hs
+    build-depends:    
+        , processamento-seguro-dados
+        , hspec
