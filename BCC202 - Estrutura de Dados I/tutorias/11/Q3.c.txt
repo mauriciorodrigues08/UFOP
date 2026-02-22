@@ -1,47 +1,15 @@
-#include <stdio.h>
-#include <stdlib.h>
+APRESENTAÇÃO - TP FUNCIONAL
+1. Modelo de Dados
+- Mostrar: Prop.hs -> data Prop
 
+- Criei um tipo de dado chamado Prop que estrutura a lógica da atividade. Ele aceita constantes (Verdadeiro ou Falso), variáveis como 'p' e 'q', e os conectivos de negação, conjunção e disjunção.
 
-typedef struct {
-  int valor;
-}Chave;
+2. Lógica de Avaliação
+- Mostrar: Prop.hs -> avalia e tautologia
 
-typedef struct {
-      Chave chave ;
-} Item ;
+- Pra saber se a fórmula é uma tautologia, o código faz o seguinte: primeiro, a função variaveis limpa as proposições e lista quem são as variáveis. Depois, a gerarMemorias cria todas as combinações possíveis de True e False para elas. O 'pulo do gato' está na função tautologia: ela usa um all para rodar a função avalia em cada um desses cenários. Se a fórmula não der erro em nenhum e retornar True em todos os casos, o programa confirma que é uma tautologia, caso contrário, o programa detecta que não é uma Tautologia.
 
-typedef struct no {
-      Item item ;
-      struct no * pEsq ;
-      struct no * pDir ;
-} No ;
+3. Fluxo de Entrada e Saída
+- Mostrar: Tautologia.hs -> main
 
-typedef No *Arvore;
-
-No *criaNo(Item item);
-
-No* pesquisaNo(Arvore raiz, Chave valorChave) {
-    if (raiz == NULL || raiz->item.chave.valor == valorChave.valor) {
-        return raiz;
-    }
-    if (valorChave.valor < raiz->item.chave.valor) {
-        return pesquisa(raiz->pEsq, valorChave);
-    }
-    else {
-        return pesquisa(raiz->pDir, valorChave);
-    }
-}
-
-void insereNo(Arvore *pRaiz, Item item) {
-    if (*pRaiz == NULL) {
-        *pRaiz = criaNo(item);
-        return;
-    }
-    
-    if (item.chave.valor < (*pRaiz)->item.chave.valor) {
-        insere(&((*pRaiz)->pEsq), item);
-    }
-    else if (item.chave.valor > (*pRaiz)->item.chave.valor) {
-        insere(&((*pRaiz)->pDir), item);
-    }
-}
+- "Na main, usei a função interact. Ela é bem prática porque trata a entrada como um fluxo constante. O programa lê uma linha, quebra com o lines, passa pelo parser e já cospe o resultado no terminal. Usei essa estrutura para evitar erros de final de arquivo (EOF) e garantir que o programa rode liso, processando várias fórmulas uma atrás da outra até o usuário decidir sair."

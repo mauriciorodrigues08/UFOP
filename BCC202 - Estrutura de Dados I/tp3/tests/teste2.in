@@ -1,0 +1,10 @@
+begin
+var nome = amelia
+begin
+var idade = 25
+print nome
+print idade
+end
+var x = fim
+print x
+end

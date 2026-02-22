@@ -1,0 +1,9 @@
+begin
+var x = 2
+var z = 7.5
+begin
+print x
+print y
+end
+print z
+end

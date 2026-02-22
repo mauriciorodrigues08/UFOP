@@ -1,0 +1,7 @@
+begin
+var x = 2.5
+begin
+print x
+end
+end
+end
