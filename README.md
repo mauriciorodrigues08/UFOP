@@ -8,6 +8,6 @@ Aqui estão algumas das linguagens/tecnologias já estudadas por mim até o mome
 
 - **Linguagem C:** Implementação desde lógicas básicas, como sintaxe da linguagem (BCC201), até lógicas mais fundamentais, como gerenciamento de memória, estruturas de dados dinâmicas, árvores binárias de busca, filas, pilhas, listas encadeads (BCC202) e simulações de hardware como RAM, Cache e HD (BCC266).
 
-- **Programação Funcional (Haskell):** Aplicação de conceitos puros do paradigma funcional, incluindo imutabilidade, recursão, avaliação preguiçosa (lazy evaluation) e funções de alta ordem.
+- **Programação Funcional (Haskell):** Aplicação de conceitos puros do paradigma funcional, incluindo imutabilidade, recursão, avaliação preguiçosa (lazy evaluation) e funções de alta ordem (BCC222).
 
 - **Ferramentas e Ambiente:** Controle de versão na prática com **Git/GitHub** e configuração de ambiente de desenvolvimento utilizando **WSL** integrado ao **Visual Studio Code**.
