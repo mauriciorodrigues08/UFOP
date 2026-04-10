@@ -1,0 +1,79 @@
+-> Classes e Objetos
+
+- Uma classe serve como um projeto técnico ou "desenho", definindo os dados (atributos) e comportamentos (métodos) de uma entidade. No entanto, uma classe por si só não pode realizar tarefas; um "objeto" deve ser instanciado a partir da classe para executar esses comportamentos.
+
+- Os princípios fundamentais incluem:
+    1. Encapsulamento: Esconder mecânicas internas complexas atrás de interfaces simplificadas (métodos).
+    
+    2. Ocultação de Informações (Information Hiding): Proteger a integridade dos dados tornando os atributos privados e acessando-os por meio de "Getters" e "Setters" controlados.
+
+    3. Validação de Dados: Usar métodos modificadores (setters) para garantir que os atributos permaneçam dentro de limites lógicos (ex: evitar saldos ou velocidades negativas).
+
+- Estrutura Conceitual: A Analogia do Carro
+    A relação entre classes e objetos é melhor compreendida através da analogia do design e operação automotiva:
+
+    1. O Projeto (Classe): Antes de um carro ser dirigido, ele deve ser projetado. Os desenhos técnicos incluem as especificações para o motor e o pedal do acelerador. Você não pode "dirigir" um desenho; ele é apenas um plano.
+
+    2. O Veículo (Objeto): Para realizar uma tarefa, o carro deve ser construído de acordo com o projeto. Este carro construído é o "objeto".
+
+    3. O Pedal (Interface/Método): O pedal do acelerador esconde os complexos processos mecânicos do motor. O motorista interage com uma interface simples (o pedal) para obter um resultado (aceleração) sem precisar entender a mecânica subjacente.
+
+    4. Atributos: Todo carro possui pontos de dados específicos, como o número de passageiros, velocidade atual e nível de combustível.
+
+
+-> Estrutura de Classe e Sintaxe em C++
+
+- Definir uma classe informa ao compilador quais métodos e atributos pertencem àquela entidade específica.
+
+- Fundamentos da Sintaxe
+    1. Declaração: Usa a palavra-chave class seguida pelo nome da classe.
+
+    2. Convenção de Nomenclatura: Por padrão, nomes de classes usam PascalCase (a primeira letra de cada palavra é maiúscula).
+
+    3. Delimitadores: O corpo da classe é delimitado por chaves {} e deve ser terminado com um ponto e vírgula ;.
+
+    4. Especificadores de Visibilidade: Os membros são categorizados por níveis de acesso: public, private ou protected.
+
+- Métodos
+    1. Métodos são funções que pertencem a uma classe. Sua definição inclui:
+
+    2. Tipo de Retorno: O tipo de dado que o método envia de volta.
+
+    3. Assinatura: Geralmente começa com letra minúscula, com as palavras subsequentes capitalizadas (camelCase).
+
+    4. Lista de Parâmetros: Variáveis passadas para o método, entre parênteses.
+
+- Integridade de Dados e Encapsulamento
+    Um princípio central da POO é a proteção de dados internos por meio de padrões de acesso específicos.
+
+- Ocultação de Informações
+    Os atributos devem, tipicamente, ser definidos como privados. Isso garante que eles só possam ser alterados ou acessados de dentro da própria classe. Tentar acessar atributos privados de fora da classe resulta em um erro de compilação.
+
+- Acessores e Modificadores (Getters e Setters)
+    Para interagir com atributos privados de forma segura, as classes utilizam métodos específicos:
+
+    1. Setters (Modificadores): Métodos usados para alterar o valor de um atributo. Eles permitem a Validação de Dados, verificando se um parâmetro está dentro de um intervalo válido antes da atribuição. Se os dados forem inválidos, um valor padrão (como zero ou NULL) deve ser atribuído.
+
+    2. Getters (Acessores): Métodos usados para recuperar o valor de um atributo.
+
+- Atribuição de Objetos
+    Objetos da mesma classe permitem a atribuição direta usando o operador de atribuição. No entanto, é necessário cautela quando os atributos incluem ponteiros para memória alocada dinamicamente, pois isso pode levar a erros.
+
+- Implementações Práticas
+    O contexto fornece vários modelos para implementação de classes como exemplo:
+
+    1. O Diário de Classe (DiarioClasse): Demonstra a estrutura básica com um método mostraMensagem() para exibir boas-vindas.
+
+    2. A Classe Carro (Carro): Um modelo mais complexo envolvendo estado e comportamento, com atributos como placa e velocidade, e métodos como acelerar() e frear().
+
+    3. Cálculo Geométrico (Retangulo): Focado em operações matemáticas, utiliza calculaArea() e calculaPerimetro() baseando-se em atributos internos de altura e base.
+
+- Visualizando Relacionamentos de Classes (UML)
+    Diagramas da Linguagem de Modelagem Unificada (UML) fornecem uma forma padronizada de representar estruturas de classes.
+
+    <Componente UML>     <Exemplo de Notação>
+    Nome da Classe:	     Conta
+    Atributo Privado:	 -saldo: int
+    Método Público:	     +depositar(double): bool
+
+    Em sistemas complexos, as classes frequentemente interagem entre si. Por exemplo, uma classe Conta pode incluir atributos que são, eles próprios, objetos de outras classes, como um objeto Cliente ou um objeto Data.
