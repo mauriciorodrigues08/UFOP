@@ -1,0 +1,65 @@
+-> FUNDAMENTOS DA ORIENTAÇÃO À OBJETOS
+
+- Para compilar projetos C++, utilizamos o comendo:
+    g++ *.cpp -o exe -Wall
+
+- Enquanto a programação clássica separa funções e repositórios passivos de dados, a POO propõe a criação de modelos que unem dados e as operações em um mesmo conjunto para simular elementos da vida real.
+
+- Principais Pontos
+    1. Classes e Objetos
+        * Uma classe é um molde estrutural (recipiente) que define características e comportamentos. Quando esse molde é materializado, cria-se um objeto (ou instância). 
+        
+        * Todo objeto possui estado (valores atuais das propriedades), comportamento (como reage e muda de estado via métodos) e identidade (seu nome de referência único).
+
+    2. Pilares do Modelo de Objetos
+        * Abstração: Capacidade de focar apenas nas características relevantes de um sistema para criar o modelo mental.
+        
+        * Encapsulamento: Conceito de "caixa preta", em que o funcionamento interno (dados e lógicas) é escondido e protegido, permitindo a interação apenas através de uma interface externa conhecida (métodos).
+        
+        * Modularidade: Divisão de um sistema complexo em componentes menores (módulos). O cenário ideal na POO é construir sistemas com alta coesão (cada classe cuida apenas de suas responsabilidades) e baixo acoplamento (baixa interdependência entre as classes).
+        
+        * Hierarquia: Organização das abstrações por meio de generalização/especialização ou agregação/decomposição.
+
+    3. Exemplos
+        * Pokémon: Ilustra as bases dos objetos. Cada Pokémon (ex: Pikachu) é um objeto com atributos (nome, tipo, força) e ações/métodos (atacar, desviar)
+
+        * Animais: Ilustra a diferença entre Classes e Instâncias. A classe Gato agrupa objetos com características comuns como os gatos "Tom" e "Garfield". Todos eles são gatos, porém não têm, necessariamente, relação direta entre si.
+
+        * Conta Bancária: Ilustra atributos (saldo da conta) e operações internas (sacar/depositar)
+
+
+
+-> RELACIONAMENTO ENTRE CLASSES
+
+- Existem 5 tipos de relacionamento entre as Classes. São eles: Associação, Agregação, Composição, Herança e Dependência.
+
+- Associação
+    . Um relacionamento genérico onde um objeto utiliza os recursos de outro
+
+- Agregação 
+    . Uma relação fraca de parte/todo
+    . A parte pode continuar existindo mesmo que o todo deixe de existir
+    . Relação "Tem um"
+    . Ex: Carrinho de Compras
+        Um carrinho e os produtos dentro dele. Se a compra for fechada e o carrinho esvaziado/excluído, os produtos originais continuam existindo no sistema
+
+- Composição
+    . Uma ligação forte de parte/todo
+    . As partes não fazem sentido ou não existem sem o objeto agregador principal
+    . Relação "Parte de" estrita
+    . Ex: Casa
+        Uma casa é constituída de paredes, telhado, porta, etc. Se essa casa for destruída, não ocorre a manutenção desses constituintes, já que não faz sentido um telhado existir sem um casa, por exemplo.
+
+- Herança
+    . Uma subclasse herda atributos e métodos de uma superclasse
+    . Permite o reaproveitamento de código e a especialização
+    . Relação "É um"
+    . Ex: Pessoas
+        A classe geral Pessoa é generalizada para abranger as subclasses derivadas Professor e Aluno. Ou seja, Professor e Aluno são pessoas, então devem possuir os mesmo atributos da classe geral.
+
+- Dependência
+    . Relação "Sabe sobre"
+    . Um relacionamento temporário e fraco
+    . Geralmente existe apenas quando um objeto é passado como parâmetro para um método de outro objeto
+    . Ex: Impressora e Documento
+        A impressora utiliza o documento apenas pontualmente para executar o método "imprimir", logo, ela depende do documento sem guardá-lo permanentemente.
