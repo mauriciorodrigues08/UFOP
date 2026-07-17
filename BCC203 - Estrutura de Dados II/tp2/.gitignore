@@ -1,0 +1,5 @@
+bin/
+obj/
+run/
+*.o
+*.bin
