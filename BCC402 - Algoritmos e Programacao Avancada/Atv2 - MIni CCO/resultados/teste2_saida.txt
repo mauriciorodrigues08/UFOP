@@ -1,0 +1,10 @@
+Número total de nós: 60
+Número total de segmentos: 59
+Número de terminais: 30
+Comprimento total da árvore: 0.593861
+Volume intravascular total: 0.444157
+Raio da raiz: 1
+Raio médio dos segmentos: 0.441295
+Número de conexões testadas: 29
+Número de conexões rejeitadas: 1937
+Tempo de execução: 0.0103279 s
