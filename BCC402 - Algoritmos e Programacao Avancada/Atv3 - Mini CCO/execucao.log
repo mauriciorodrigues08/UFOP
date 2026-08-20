@@ -1,0 +1,52 @@
+===== LOG DE EXECUCAO - MiniCCO =====
+Parametros:
+  N terminais : 100
+  Raio        : 0.05
+  Gamma       : 3
+  M (grade)   : 10
+  Modo custo  : J1
+  Alpha       : 1
+  Beta        : 1
+  Seed        : 1
+======================================
+
+[Terminal 26/100] inserido com sucesso
+  Ponto sorteado         : (-0.0470283, 0.00956631, 0)
+  Segmento alvo (antigo) : 39 -> 4
+  Nova bifurcacao (id)   : 51 em (-0.0447471, 0.00215634, 0)
+  Novo terminal (id)     : 50
+  Custo (J1)           : 0.411032
+  Epsilon usado          : 0.00748167
+  Candidatos avaliados   : 49
+
+[Terminal 51/100] inserido com sucesso
+  Ponto sorteado         : (0.0313484, 0.0382393, 0)
+  Segmento alvo (antigo) : 13 -> 12
+  Nova bifurcacao (id)   : 101 em (0.0243727, 0.0422572, 0)
+  Novo terminal (id)     : 100
+  Custo (J1)           : 0.419714
+  Epsilon usado          : 0.006595
+  Candidatos avaliados   : 99
+
+[Terminal 76/100] inserido com sucesso
+  Ponto sorteado         : (0.0014368, 0.00160453, 0)
+  Segmento alvo (antigo) : 137 -> 136
+  Nova bifurcacao (id)   : 151 em (0.00698136, 0.00406969, 0)
+  Novo terminal (id)     : 150
+  Custo (J1)           : 0.433642
+  Epsilon usado          : 0.00437601
+  Candidatos avaliados   : 149
+
+======================================
+Resumo final:
+  Numero total de nos        : 200
+  Numero total de segmentos  : 199
+  Numero de terminais        : 100
+  Comprimento total          : 1.10754
+  Volume intravascular total : 0.44322
+  Raio da raiz               : 1
+  Raio medio dos segmentos   : 0.323855
+  Conexoes testadas          : 9801
+  Conexoes rejeitadas        : 15784
+  Tempo de execucao          : 0.942642 s
+======================================
